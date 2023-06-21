@@ -1,23 +1,25 @@
 # VERSION1  :   Setting everything up in the global scope
-# from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
+"""
+from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
 
-# import sys
+import sys
 
-# app = QApplication(sys.argv)
+app = QApplication(sys.argv)
 
-# window = QMainWindow()
-# window.setWindowTitle("Our first MainWindow App")
+window = QMainWindow()
+window.setWindowTitle("Our first MainWindow App")
 
-# button = QPushButton()
-# button.setText("Press Me")
+button = QPushButton()
+button.setText("Press Me")
 
-# window.setCentralWidget(button)
+window.setCentralWidget(button)
 
-# window.show()
-# app.exec()
-
+window.show()
+app.exec()
+"""
 
 # VERSION2  :   Setting up a separate class
+"""
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
 
@@ -37,3 +39,4 @@ app = QApplication(sys.argv)
 window = ButtonHolder()
 window.show()
 app.exec()
+"""
