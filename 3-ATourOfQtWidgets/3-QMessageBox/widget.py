@@ -9,9 +9,13 @@ class Widget(QWidget):
 
         hard_button = QPushButton("Hard")
         hard_button.clicked.connect(self.hard_button_clicked)
+        
+        critical_button = QPushButton("Critical")
+        critical_button.clicked.connect(self.critical_button_clicked)
 
         layout = QVBoxLayout()
         layout.addWidget(hard_button)
+        layout.addWidget(critical_button)
 
         self.setLayout(layout)
 
@@ -31,6 +35,15 @@ class Widget(QWidget):
 
         # Show the message box
         result = messagebox.exec()
+        if result == QMessageBox.Ok:
+            print("User chose Ok")
+        else:
+            print("User chose Cancel")
+
+    # Critical
+    def critical_button_clicked(self):
+        result = QMessageBox.critical(self, "Critical MessageBox", "This is a critical message! \nDo you want to continue?", QMessageBox.Ok | QMessageBox.Cancel)
+
         if result == QMessageBox.Ok:
             print("User chose Ok")
         else:
