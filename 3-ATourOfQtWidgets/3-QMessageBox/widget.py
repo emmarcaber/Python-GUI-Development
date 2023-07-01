@@ -13,9 +13,25 @@ class Widget(QWidget):
         critical_button = QPushButton("Critical")
         critical_button.clicked.connect(self.critical_button_clicked)
 
+        question_button = QPushButton("Question")
+        question_button.clicked.connect(self.question_button_clicked)
+
+        information_button = QPushButton("Information")
+        information_button.clicked.connect(self.information_button_clicked)
+
+        warning_button = QPushButton("Warning")
+        warning_button.clicked.connect(self.warning_button_clicked)
+
+        about_button = QPushButton("About")
+        about_button.clicked.connect(self.about_button_clicked)
+
         layout = QVBoxLayout()
         layout.addWidget(hard_button)
         layout.addWidget(critical_button)
+        layout.addWidget(question_button)
+        layout.addWidget(information_button)
+        layout.addWidget(warning_button)
+        layout.addWidget(about_button)
 
         self.setLayout(layout)
 
@@ -43,6 +59,42 @@ class Widget(QWidget):
     # Critical
     def critical_button_clicked(self):
         result = QMessageBox.critical(self, "Critical MessageBox", "This is a critical message! \nDo you want to continue?", QMessageBox.Ok | QMessageBox.Cancel)
+
+        if result == QMessageBox.Ok:
+            print("User chose Ok")
+        else:
+            print("User chose Cancel")
+
+    # Question
+    def question_button_clicked(self):
+        result = QMessageBox.question(self, "Question MessageBox", "Asking a question?", QMessageBox.Ok | QMessageBox.Cancel)
+
+        if result == QMessageBox.Ok:
+            print("User chose Ok")
+        else:
+            print("User chose Cancel")
+
+    # Information
+    def information_button_clicked(self):
+        result = QMessageBox.information(self, "Information MessageBox", "This is an informative text", QMessageBox.Ok | QMessageBox.Cancel)
+
+        if result == QMessageBox.Ok:
+            print("User chose Ok")
+        else:
+            print("User chose Cancel")
+
+    # Warning
+    def warning_button_clicked(self):
+        result = QMessageBox.warning(self, "Warning MessageBox", "Caution! This is a warning message!", QMessageBox.Ok | QMessageBox.Cancel)
+
+        if result == QMessageBox.Ok:
+            print("User chose Ok")
+        else:
+            print("User chose Cancel")
+
+    # About
+    def about_button_clicked(self):
+        result = QMessageBox.about(self, "About MessageBox", "Some about message")
 
         if result == QMessageBox.Ok:
             print("User chose Ok")
