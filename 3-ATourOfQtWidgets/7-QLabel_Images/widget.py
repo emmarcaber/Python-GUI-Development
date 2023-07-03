@@ -1,5 +1,5 @@
 from PySide6.QtGui import QPixmap
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel
+from PySide6.QtWidgets import QWidget, QLabel, QVBoxLayout
 
 class Widget(QWidget):
 
@@ -8,10 +8,10 @@ class Widget(QWidget):
 
         self.setWindowTitle("QLabel Images Demo")
 
-        image_label = QLabel()
-        image_label.setPixmap(QPixmap("images/minions.png"))
+        label = QLabel()
+        label.setPixmap(QPixmap("images/minions.png"))      # Pass the relative path of the image you want to insert
 
         layout = QVBoxLayout()
-        layout.addWidget(image_label)
+        layout.addWidget(label)
 
         self.setLayout(layout)
