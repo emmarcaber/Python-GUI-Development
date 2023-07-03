@@ -23,6 +23,10 @@ class Widget(QWidget):
         cut_button = QPushButton("Cut")
         cut_button.clicked.connect(self.text_edit.cut)
 
+        # Paste
+        paste_button = QPushButton("Paste")
+        paste_button.clicked.connect(self.paste)        # Go through some custom slot
+
         # Undo
         undo_button = QPushButton("Undo")
         undo_button.clicked.connect(self.text_edit.undo)
@@ -39,15 +43,20 @@ class Widget(QWidget):
         set_html_button = QPushButton("Set HTML")
         set_html_button.clicked.connect(self.set_html_button_clicked)
 
+        clear_button = QPushButton("CLEAR")
+        clear_button.clicked.connect(self.text_edit.clear)
+
         # Horizontal Layout for Buttons
         h_layout = QHBoxLayout()
         h_layout.addWidget(current_text_button)
         h_layout.addWidget(copy_button)
         h_layout.addWidget(cut_button)
+        h_layout.addWidget(paste_button)
         h_layout.addWidget(undo_button)
         h_layout.addWidget(redo_button)
         h_layout.addWidget(set_plain_text_button)
         h_layout.addWidget(set_html_button)
+        h_layout.addWidget(clear_button)
 
         # Vertical Layout for all of the Widgets
         v_layout = QVBoxLayout()
@@ -60,6 +69,10 @@ class Widget(QWidget):
     # Current Text Button Slot
     def current_text_button_clicked(self):
         print(self.text_edit.toPlainText())
+
+    # Paste Button Slot
+    def paste(self):
+        self.text_edit.paste()
 
     # Set Plain Text Button Slot
     def set_plain_text_button_clicked(self):
