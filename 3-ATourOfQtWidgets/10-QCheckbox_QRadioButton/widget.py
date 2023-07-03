@@ -49,6 +49,14 @@ class Widget(QWidget):
         beer = QCheckBox("Beer")
         juice = QCheckBox("Juice")
         coffee = QCheckBox("Coffee")
+        beer.setChecked(True)
+
+        # Make the checkboxes exclusive
+        exclusive_button_group = QButtonGroup(self)     # The self parent is needed here
+        exclusive_button_group.addButton(beer)
+        exclusive_button_group.addButton(juice)
+        exclusive_button_group.addButton(coffee)
+        exclusive_button_group.setExclusive(True)
         
         drinks_layout = QVBoxLayout()
         drinks_layout.addWidget(beer)
@@ -79,7 +87,7 @@ class Widget(QWidget):
 
 
     # SLOTS FOR OS CHECKBOXES
-    
+
     # Mac Checkbox Toggled
     def mac_checkbox_toggled(self, checked):
         if (checked):
