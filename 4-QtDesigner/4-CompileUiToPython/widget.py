@@ -6,7 +6,7 @@ NOTE:
         pyside6-uic [filename.ui] > [ui_filename.py]
     ```
 
-    If you encounter an error of "Python Source Code String Cannot Contain Null Bytes".
+    If you encounter an error of "ValueError: source code cannot contain null bytes".
     You can check the encoding on the right bottom side of VSCode. Then, just click on the encoding 
     and select "Save with Encoding" and select UTF-8.
 """
