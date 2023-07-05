@@ -10,7 +10,8 @@ NOTE:
 from PySide6.QtWidgets import QWidget
 from PySide6.QtGui import QIcon
 from ui_widget import Ui_Form
-import resource_rc
+
+import resource_rc              # Manually import the compiled resource file
 
 class Widget(QWidget, Ui_Form):
 
