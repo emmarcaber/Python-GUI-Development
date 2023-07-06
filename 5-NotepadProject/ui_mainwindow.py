@@ -72,6 +72,9 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.textEdit = QTextEdit(self.centralwidget)
         self.textEdit.setObjectName(u"textEdit")
+        font = QFont()
+        font.setPointSize(10)
+        self.textEdit.setFont(font)
 
         self.verticalLayout.addWidget(self.textEdit)
 
@@ -134,3 +137,4 @@ class Ui_MainWindow(object):
         self.menuHelp.setTitle(QCoreApplication.translate("MainWindow", u"Help", None))
         self.toolBar.setWindowTitle(QCoreApplication.translate("MainWindow", u"toolBar", None))
     # retranslateUi
+
